@@ -1,15 +1,82 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-TW">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Yutsu | 個人空間</title>
+    <meta name="description" content="歡迎來到 Yutsu 的個人官方網站，探索我的專案與創意。">
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <h1>欢迎来到Yutsu的个人网站</h1>
-    <p>GitHub Pages建立</p>
+    <div class="blob"></div>
+
+    <header>
+        <div class="container hero">
+            <span class="badge">Welcome to my space</span>
+            <h1>Yutsu</h1>
+            <p>創意開發者 & 數位愛好者。致力於打造極致的數位體驗。</p>
+            <a href="#about" class="cta">探索更多</a>
+        </div>
+    </header>
+
+    <section id="about" class="container">
+        <h2 class="section-title" data-reveal>關於我</h2>
+        <div class="grid">
+            <div class="card" data-reveal>
+                <h3>探索與熱情</h3>
+                <p>熱衷於現代網頁技術與使用者介面設計，喜歡從零到一構建具備視覺衝擊力的專案。</p>
+            </div>
+            <div class="card" data-reveal>
+                <h3>技術棧</h3>
+                <p>專注於 HTML5, CSS3, JavaScript 以及各式現代框架，追求效能與美感的平衡。</p>
+            </div>
+            <div class="card" data-reveal>
+                <h3>GitHub Pages</h3>
+                <p>這是我的第一個 GitHub Pages 空間，未來將會在這裡分享更多精彩的內容。</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="container">
+        <h2 class="section-title" data-reveal>我的專案</h2>
+        <div class="grid">
+            <div class="card" data-reveal>
+                <h3>近期作品</h3>
+                <p>目前正在構建一系列開源工具與互動式視覺設計，敬請期待。</p>
+            </div>
+            <div class="card" data-reveal>
+                <h3>聯絡我</h3>
+                <p>如果您對我的專案感興趣，歡迎透過 GitHub 進行交流。</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Yutsu. Powered by GitHub Pages.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Simple Scroll Reveal Implementation
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('[data-reveal]').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
 </body>
 
 </html>
